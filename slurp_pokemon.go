@@ -6,38 +6,38 @@ import (
 )
 
 type Pokedex struct {
-	ID int
+	ID   int
 	Name Name
 	Type []string
 	Base Base
 }
 
 type Name struct {
-	English string
+	English  string
 	Japanese string
-	Chinese string
+	Chinese  string
 }
 
 type Base struct {
-	HP int
-	Attack int
-	Defense int
-	SpAttack int
+	HP        int
+	Attack    int
+	Defense   int
+	SpAttack  int
 	SpDefense int
-	Speed int
+	Speed     int
 }
 
 type Item struct {
-	ID int
+	ID   int
 	Name Name
 }
 
 type Skill struct {
 	Accuracy int
-	Ename string
-	ID int
-	Power int
-	PP int
+	Ename    string
+	ID       int
+	Power    int
+	PP       int
 }
 
 func gregUnmarshal(m interface{}, path string) {
@@ -47,7 +47,7 @@ func gregUnmarshal(m interface{}, path string) {
 		panic(err)
 	}
 
-    unmarshalErr := json.Unmarshal(data, &m)
+	unmarshalErr := json.Unmarshal(data, &m)
 
 	if unmarshalErr != nil {
 		panic(unmarshalErr)
