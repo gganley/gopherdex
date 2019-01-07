@@ -1,9 +1,2 @@
-package main
+package gopherdex
 
-import "database/sql"
-
-func main() {
-
-	sql.Open()
-
-}
