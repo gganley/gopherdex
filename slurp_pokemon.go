@@ -3,7 +3,6 @@ package gopherdex
 import (
 	"encoding/json"
 	"io/ioutil"
-	"fmt"
 )
 
 type Pokedex struct {
