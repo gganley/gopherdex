@@ -43,7 +43,5 @@ func getPokedex() []Pokedex {
 		panic(unmarshalErr)
 	}
 
-	fmt.Printf("+%v\n", m)
-
 	return(m)
 }
