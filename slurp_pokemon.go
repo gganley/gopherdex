@@ -54,13 +54,13 @@ func gregUnmarshal(m interface{}, path string) {
 	}
 }
 
-func getPokedex() []Pokedex {
+func GetPokedex() []Pokedex {
 	var m []Pokedex
 	gregUnmarshal(&m, "pokemon.json/pokedex.json")
 	return m
 }
 
-func getSkills() []Skill {
+func GetSkills() []Skill {
 	var m []Skill
 	gregUnmarshal(&m, "pokemon.json/skills.json")
 	return m

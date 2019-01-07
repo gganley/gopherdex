@@ -5,5 +5,5 @@ import (
 )
 
 func Test_getPokedex(t *testing.T) {
-	getPokedex()
+	GetPokedex()
 }
