@@ -20,15 +20,18 @@ type Image struct {
 	Height int32
 }
 
-func main() {
-
-	db, err := sql.Open("sqlite3", "./poko.db")
-	//checkErr(err)
-	if err != nil {
-		panic(err)
+func Main() {
+	db, sqlOpenErr := sql.Open("sqlite3", "./poko.db")
+	//checkErr(sqlOpenErr)
+	if sqlOpenErr != nil {
+		panic(sqlOpenErr)
 	}
-	db.Begin()
 
-	fmt.Println()
+	tx, dbBeginErr := db.Begin()
+	if dbBeginErr != nil {
+		panic(dbBeginErr)
+	}
+
+	fmt.Println(tx)
 
 }
