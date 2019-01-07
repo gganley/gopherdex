@@ -28,10 +28,21 @@ type Base struct {
 	Speed int
 }
 
+type Item struct {
+	ID int
+	Name Name
+}
 
-func getPokedex() []Pokedex {
-	var m []Pokedex
-	data, err := ioutil.ReadFile("pokemon.json/pokedex.json")
+type Skill struct {
+	Accuracy int
+	Ename string
+	ID int
+	Power int
+	PP int
+}
+
+func gregUnmarshal(m interface{}, path string) {
+	data, err := ioutil.ReadFile(path)
 
 	if err != nil {
 		panic(err)
@@ -42,6 +53,16 @@ func getPokedex() []Pokedex {
 	if unmarshalErr != nil {
 		panic(unmarshalErr)
 	}
+}
 
-	return(m)
+func getPokedex() []Pokedex {
+	var m []Pokedex
+	gregUnmarshal(&m, "pokemon.json/pokedex.json")
+	return m
+}
+
+func getSkills() []Skill {
+	var m []Skill
+	gregUnmarshal(&m, "pokemon.json/skills.json")
+	return m
 }
